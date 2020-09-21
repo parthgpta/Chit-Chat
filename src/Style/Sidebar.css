@@ -1,0 +1,35 @@
+@font-face{
+    font-family: orangekid;
+    src :url(Fonts/orangekid.ttf);
+  }
+  @font-face{
+    font-family: ANTICLIMAX;
+    src :url(Fonts/ANTICLIMAX.TTF);
+  }
+  
+  
+.sidebar{
+    width: 400px;
+    background-color: ;
+    box-shadow: -1px 4px 20px -16px rgb(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    /* flex: 0.35; */
+}
+
+.sidebar_header{
+    height: 75px;
+    font-size: 42px;
+    font-family: orangekid;
+    font-weight: bold;
+    padding-top: 20px;
+    background-color: ;
+    text-align: center;
+}
+
+.sidebar_header i{
+    font-size: 35px;
+    position: relative;
+    top: -15px;
+}
