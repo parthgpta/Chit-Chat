@@ -1,0 +1,20 @@
+.login {
+    text-align: center;
+  }
+.container{
+    display: grid;
+    place-items: center;
+  }
+.card {
+    box-shadow: 0 4px 8px 0 grey;
+    width: 50vw;
+    height: 50vh;
+    margin-top: 150px;
+    background-color: rgb(111, 198, 209);
+    text-align: center;
+    
+ 
+}
+.txt{
+    margin-top: 50px;
+}
