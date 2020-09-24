@@ -2,9 +2,17 @@ import React  from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import './login.css';
+import {auth , provider} from './firebase' ;
+import '../Style/Login.css';
 
-function Login(){
+
+function Login(props){
+
+  const signin = () =>{
+    auth.signInWithPopup(provider).then(result => props.set_user({id :result.additionalUserInfo.profile.id, name:result.additionalUserInfo.profile.name })).catch(error => alert(error.message))
+  }
+
+
     const useStyles = makeStyles({
         root: {
           minWidth: 100,
@@ -29,7 +37,7 @@ function Login(){
           Your Chat room!
         </Typography>
         
-        <Button variant="contained" color="secondary" href="#contained-buttons">
+        <Button variant="contained" color="secondary" href="#contained-buttons" onClick={signin}>
        Login with Google
         </Button>
         </div>
