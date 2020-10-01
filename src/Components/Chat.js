@@ -12,12 +12,8 @@ function Chat(props){
     const [roomName, setRoomname] = useState("");
     const [messages , setMessages] = useState([]);
     
-   //const user = props.user ; 
-   var user = {
-    id: "114648587059821115504",
-    name: "Parth Gupta"
-   }
-
+   const user = props.user ; 
+  
 
     useEffect(()=>{
 
