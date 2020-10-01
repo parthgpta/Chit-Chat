@@ -1,7 +1,8 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Chat from './Chat'
-import {Route , Link} from 'react-router-dom' 
+import Greet from './Greet'
+import {Route , Link , Redirect} from 'react-router-dom' 
 import '../Style/Main.css'
 
 function Main(props){
@@ -10,6 +11,10 @@ function Main(props){
         <div className='parent'>
             <div className='Card'>
             <Sidebar/> 
+            <Redirect exact from="/" to="/welcome" />
+            <Route path='/welcome' >
+                <Greet />
+            </Route>
             <Route path='/room/:roomid'>                
                 <Chat  user={props.user} />
             </Route>

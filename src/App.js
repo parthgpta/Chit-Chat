@@ -9,15 +9,12 @@ import './App.css';
 
 function App() {
   const [user , setuser]  = useState(null) ;
-  // setuser({
-  //   "id": "114648587059821115504",
-  //   "name": "Parth Gupta"
-  // });
+  
   
   return (
     <div className="App">
 
-      {!user & 0 ? <Login set_user={setuser} /> :
+      {!user &0  ? <Login set_user={setuser} /> :
         (<Router>
           <Switch>
             <Main user={user} />

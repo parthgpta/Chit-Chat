@@ -12,11 +12,12 @@ function Chat(props){
     const [roomName, setRoomname] = useState("");
     const [messages , setMessages] = useState([]);
     
-   // const user = props.user ; 
-   const user = {
-    "id": "114648587059821115504",
-    "name": "Parth Gupta"
-  } ;
+   //const user = props.user ; 
+   var user = {
+    id: "114648587059821115504",
+    name: "Parth Gupta"
+   }
+
 
     useEffect(()=>{
 
@@ -44,19 +45,7 @@ function Chat(props){
             setValue("")
         }
     }
-    // useEffect(()=>{
-    //     var objDiv = document.getElementById("chat");
-    //     objDiv.scrollTop = objDiv.scrollHeight;
-    // },[])
-
-    // useEffect(()=>{
-    //     document.addEventListener("keydown" ,({key})=>{
-    //             if(key == "Enter"){
-    //                 submit();
-    //             }
-    //     })
-    // },[])
-
+    
     const handlechange =(e) =>{
         setValue(e.target.value);
     }
