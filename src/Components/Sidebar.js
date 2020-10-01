@@ -83,18 +83,19 @@ const Rooms =({rooms , state}) =>{
 
 const Roomdis = ({element}) => {
     const [lastmessage , setlastmessage] = useState([]);    
+    const [updmessage , setupmessage] = useState([]);
     useEffect(()=>{
         db.collection('rooms').doc(element.id).collection('messages').orderBy('timestamp','desc').limit(1).onSnapshot ( snapshot => (
-                    setlastmessage(snapshot.docs.map( doc => doc.data()  ))
+                    setupdmessage(snapshot.docs.map( doc => doc.data() ))
                 )
         )    
        
                 
     } ,[])
 
-    function setstring(messtring){
+    function setlastmessage(messtring){
         if(messtring.length>40)
-            return messtring.slice(0,40)+" ....";
+            return messtring.slice(0,30)+" ....";
         else
             return messtring ;
     }
@@ -106,9 +107,9 @@ const Roomdis = ({element}) => {
                         <div className='room-name'>
                         <i class="fas fa-quote-left"></i>{" "} {element.data.name}
                         </div>
-                        {/* <div className ='room-mes'>
-                            {lastmessage.length!=0? setstring(lastmessage[0].message) : <pre></pre>}
-                        </div> */}
+                         <div className ='room-mes'>
+                            {lastmessage.length!=0? setlastmessage(lastmessage[0].message) : <pre></pre>}
+                        </div> 
                     </div>    
                 </Link>       
          </>
