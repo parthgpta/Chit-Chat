@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
 
-      {!user &0  ? <Login set_user={setuser} /> :
+      {!user  ? <Login set_user={setuser} /> :
         (<Router>
           <Switch>
             <Main user={user} />
