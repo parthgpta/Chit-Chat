@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center; */
     background-color:#dadbd3 ;
+    background-color:teal;
     display: grid;
     place-items: center;
 }

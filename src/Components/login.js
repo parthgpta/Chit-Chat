@@ -27,22 +27,22 @@ function Login(props){
           },});
           const classes = useStyles();
     return(
-        <div class = "container">
-    <div class ="card">
-       <div class="txt">
-         <Typography className={classes.title2} gutterBottom variant="h5" component="h2">
-            Chit-Chat
-          </Typography>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Your Chat room!
-        </Typography>
-        
-        <Button variant="contained" color="secondary" href="#contained-buttons" onClick={signin}>
-       Login with Google
-        </Button>
+        <div className = "container">
+          <div className ="card">            
+            <div className='login_header '>
+                CHIT - CHAT {'  '}<i class="far fa-comment-dots"></i>       
+            </div>
+            <div className='login-footer'>
+              <div>
+                 Your Chat Room !
+              </div><hr></hr>
+              <Button variant="contained" color="primary" href="#contained-buttons" onClick={signin}>
+              <i class="fab fa-google"></i> Login with Google
+              </Button>
+            </div>
+              
+          </div>   
         </div>
-     </div>   
-    </div>
     );
 }
 
