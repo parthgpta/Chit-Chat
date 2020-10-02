@@ -3,6 +3,7 @@ import db from "./firebase.js" ;
 import {Link} from 'react-router-dom'
 import firebase from "firebase" ;
 import '../Style/Sidebar.css' ; 
+import userEvent from '@testing-library/user-event';
 
 var count = 0 ;
 const initialState = {
@@ -47,6 +48,19 @@ function Sidebar(){
         toggleButton();
         
     }
+
+    const createpersonalroom=()=>{
+        const name = prompt("Enter Room Name");
+        const other = prompt("Enter ID of other Person");
+        if(name){
+            db.collection("rooms").add({
+                name : name , 
+                timestamp : firebase.firestore.FieldValue.serverTimestamp()  ,
+                by : user.id ,
+                allowed : other
+            })
+        }
+    }
     
    
     return (
@@ -59,6 +73,11 @@ function Sidebar(){
             <div className='add-button ' onClick={createroom} >
                 <div className='button'>
                 <i class="fas fa-plus"></i> Add New Room
+                </div>
+            </div>
+            <div className='add-button ' onClick={createpersonalroom} >
+                <div className='button'>
+                <i class="fas fa-plus"></i> Add personal room
                 </div>
             </div>
             <Rooms rooms={rooms} state={state} />          
