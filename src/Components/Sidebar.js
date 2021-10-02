@@ -48,6 +48,19 @@ function Sidebar(){
         
     }
     
+    const createpersonalroom=()=>{
+        const name = prompt("Enter Room Name");
+        const other = prompt("Enter ID of other Person");
+        if(name){
+            db.collection("rooms").add({
+                name : name , 
+                timestamp : firebase.firestore.FieldValue.serverTimestamp()  ,
+                by : user.id ,
+                allowed : other
+            })
+        }
+    }
+    
    
     return (
         
